@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Topics</title>
-</head>
-<body>
+${header}
   <h1>The list</h1>
   <a href="/">Back to home page</a>
   <ul>
     ${
-    topics.map(t => `
-    <li><a href="/topics/${t}">${t}</a></li>    
-    `).join(' ')
+    topics.map(t => {
+      console.log('inside the map');
+      return `
+        <li><a href="/topics/${t}">${t}</a></li>    
+      `
+    }).join(' ')
     }
   </ul>
-</body>
-</html>
+${footer}
